@@ -25,11 +25,14 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product, quantity = 1) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
+      // Use _id from API or fallback to id
+      const productId = product._id || product.id;
+      
+      const existingItem = prevCart.find((item) => item.id === productId);
 
       if (existingItem) {
         return prevCart.map((item) =>
-          item.id === product.id
+          item.id === productId
             ? {
                 ...item,
                 quantity: item.quantity + quantity,
@@ -41,7 +44,7 @@ export const CartProvider = ({ children }) => {
         return [
           ...prevCart,
           {
-            id: product.id,
+            id: productId,  // Store the _id as id
             name: product.name,
             price: product.price,
             quantity: quantity,
