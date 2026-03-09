@@ -30,12 +30,17 @@ const AdminDashboard = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/admin/products", {
-        headers: {
-          "x-auth-token": token,
-          "Content-Type": "application/json",
+   
+     
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/admin/products`,
+        {
+          headers: {
+            "x-auth-token": token,
+            "Content-Type": "application/json",
+          },
         },
-      });
+      );
 
       if (response.status === 401) {
         localStorage.removeItem("adminToken");
