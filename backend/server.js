@@ -26,7 +26,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://eggapp-client.onrender.com/api'],
+  origin: ['http://localhost:5173',  'https://eggapp-client-1.onrender.com', 'https://eggapp-client.onrender.com/api'],
   credentials: true
 }));
 
