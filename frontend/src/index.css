@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-white text-gray-800 font-sans;
+  }
+
+  h1 {
+    @apply text-4xl font-bold md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold md:text-4xl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 shadow-md;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all;
+  }
+
+  .btn-whatsapp {
+    @apply bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-4;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
